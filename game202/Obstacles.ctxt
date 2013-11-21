@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=obstacle
+comment0.target=Obstacles(ObstacleType)
+comment1.params=
+comment1.target=ObstacleType\ getObstacle()
+comment2.params=obstacle
+comment2.target=void\ setObstacle(ObstacleType)
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ moveRight()
+comment5.params=
+comment5.target=void\ moveLeft()
+numComments=6

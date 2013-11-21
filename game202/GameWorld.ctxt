@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=GameWorld\ getInstance()
+comment1.params=
+comment1.target=GameLogic\ getGameLogic()
+comment2.params=
+comment2.target=Character\ getCharacter()
+comment3.params=
+comment3.target=GameWorld()
+comment4.params=
+comment4.target=void\ started()
+comment5.params=
+comment5.target=void\ act()
+comment6.params=
+comment6.target=void\ prepare()
+comment7.params=roadCenterX
+comment7.target=void\ road(int)
+numComments=8

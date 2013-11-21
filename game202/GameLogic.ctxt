@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.params=p
+comment0.target=void\ setCharacter(Character)
+comment1.params=p
+comment1.target=GameLogic(Character)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameLogics\r\n
+comment2.params=
+comment2.target=void\ clearScore()
+comment3.params=
+comment3.target=Label\ getInstance()
+comment4.params=w
+comment4.target=void\ setScore(greenfoot.World)
+comment5.params=type\ lane
+comment5.target=int\ CheckObstracle(int,\ int)
+numComments=6
