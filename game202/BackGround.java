@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BackGround extends Actor
+public class BackGround extends Actor implements Subject
 {
     public BackGround(){
         /*GreenfootImage g = new GreenfootImage("roadSides2-new.png");
@@ -15,13 +15,19 @@ public class BackGround extends Actor
     }
     
     int counter = 0;
-    /**
-     * Act - do whatever the BackGround wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
+    public void attach(Observer ob){
+    
+    }
+    public void detach(Observer ob){
+    
+    }
+    public void notifyObserver(){
+    
+    }
     public void act() 
     {
-        //Testing GitHub - Dhananjay
+        
         GreenfootImage g = new GreenfootImage("roadSides2-new.png");
         this.setImage(g);
         //Rock testObj = (Rock)ObstacleFactory.buildObstacle(ObstacleType.ROCK);
@@ -60,7 +66,6 @@ public class BackGround extends Actor
                     this.getWorld().addObject(ObstacleFactory.buildObstacle(ObstacleType.ROCK), 358, 160);
                     this.getWorld().addObject(ObstacleFactory.buildObstacle(ObstacleType.COIN), 365, 160);
             }
-            Greenfoot.stop();
         }
         
         /* if(counterTree==100){

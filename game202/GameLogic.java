@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GameLogic
+public class GameLogic implements Observer
 {
     // instance variables - replace the example below with your own
     private int score = 0;
@@ -25,6 +25,10 @@ public class GameLogic
     
     public GameLogic( Character p ){
         player = p;
+    }
+    
+    public void update(){
+    
     }
 
     public void clearScore(){

@@ -1,7 +1,7 @@
 import greenfoot.*;
 import java.awt.Color;
 
-public class Character extends Actor
+public class Character extends Actor implements Subject
 {
     Label instr;
     
@@ -33,6 +33,25 @@ public class Character extends Actor
     
     ICharacterState currentState = null;
     
+    
+    public Character(int width, int height) {
+        
+        
+        setImage("stand_edit.png");
+        setLocation( 250, 250 ) ;
+        getImage().scale( 70, 100  );
+                       
+    }
+    
+    public void attach(Observer ob){
+    
+    }
+    public void detach(Observer ob){
+    
+    }
+    public void notifyObserver(){
+    
+    }
 
     
     public void setState( ICharacterState newState ){
@@ -53,14 +72,9 @@ public class Character extends Actor
         return jumpCounter > 0 ? 2 : 1;
     }
     
-    public Character(int width, int height) {
-        
-        
-        setImage("stand_edit.png");
-        setLocation( 250, 250 ) ;
-        getImage().scale( 70, 100  );
-                       
-    }
+    
+    
+   
     
     public void setChar(){
         instr = new Label( "   " , 50 );
@@ -273,5 +287,5 @@ public class Character extends Actor
        }
             
     }
-
+   
 }
