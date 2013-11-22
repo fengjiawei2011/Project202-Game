@@ -21,7 +21,7 @@ public class BackGround extends Actor
      */
     public void act() 
     {
-        
+        //Testing GitHub - Dhananjay
         GreenfootImage g = new GreenfootImage("roadSides2-new.png");
         this.setImage(g);
         //Rock testObj = (Rock)ObstacleFactory.buildObstacle(ObstacleType.ROCK);
