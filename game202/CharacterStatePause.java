@@ -37,7 +37,7 @@ public class CharacterStatePause implements ICharacterState {
                            
        jumpCounter = 0;
        chr.setImage("jump_edit.png");
-       chr.getImage().scale( 100, 170);
+       chr.getImage().scale( 70 , 100 );
        jumpCounter = jumpCounterValue;
        up = true;
     
@@ -45,36 +45,24 @@ public class CharacterStatePause implements ICharacterState {
     
     
    public void gameRun(  Character chr ){
-       
-             
+                   
        GameWorld world = (GameWorld)chr.getWorld();
 
        UserData[] users = world.getTrackedUsers();   
        
        for (UserData user : users) {
                   
-           Joint torso = user.getJoint(Joint.TORSO);
-           
-           
-           Joint l = user.getJoint( Joint.LEFT_HAND ) ;
-           Joint r = user.getJoint( Joint.RIGHT_HAND ) ;
-           Joint ls = user.getJoint( Joint.LEFT_SHOULDER ) ;
-           Joint rs = user.getJoint( Joint.RIGHT_SHOULDER );
-           
-           
-           
-          
-           
-           
-           
-           int a = torso.getX();
-           
-           int b = torso.getY();
+           if (user.getJoint( Joint.LEFT_HAND).getY( ) < user.getJoint(Joint.HEAD).getY ( ) ) {
+                        
+               if (user.getJoint( Joint.RIGHT_HAND).getY( ) < user.getJoint(Joint.HEAD).getY ( ) ) {
                            
-        }
-        
-    }   
-    
+                   if (user.getJoint( Joint.RIGHT_HAND).getX( ) < user.getJoint( Joint.LEFT_HAND).getX( ) ) {
+                           chr.setState( new CharacterStateNormal( chr ) ) ;
+                    }
+                }
+            }                           
+        }        
+    }    
 }
 
 

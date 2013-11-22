@@ -58,7 +58,7 @@ public class Character extends Actor
         
         setImage("stand_edit.png");
         setLocation( 250, 250 ) ;
-        getImage().scale( 100, 170);
+        getImage().scale( 70, 100  );
                        
     }
     
@@ -125,6 +125,7 @@ public class Character extends Actor
                    right = right > a ? right : a ;
                        
                     if (user.getJoint( Joint.RIGHT_HAND).getY( ) < user.getJoint(Joint.HEAD).getY ( ) ) {
+                        
                          if (user.getJoint( Joint.LEFT_HAND).getY( ) > user.getJoint(Joint.HEAD).getY ( ) ) {
                             setLocation(charX, charY);
                             state = 2;
@@ -220,16 +221,16 @@ public class Character extends Actor
     }
     
     public void stateRun(){
+        
          GameWorld world = (GameWorld)getWorld();
     
-            UserData[] users = world.getTrackedUsers();
+         UserData[] users = world.getTrackedUsers();
             
-            
-            for (UserData user : users) {
+         for (UserData user : users) {
                    if (user.getJoint( Joint.RIGHT_HAND).getX( ) < user.getJoint( Joint.LEFT_HAND).getX( ) ) {
                        state = -1;
                     }
-            }      
+         }      
             
     }
     
@@ -240,22 +241,19 @@ public class Character extends Actor
     public void act() 
     {
         
-        
         if ( currentState == null ){
             
-                setChar();
+            setChar();
                        
             setState( new CharacterStateConfigure( this ) );
             
             
-        }else {
-            
+        }else {            
 
             currentState.gameRun( this );
             
         }
         
-
        GameWorld world = (GameWorld)getWorld();
 
        UserData[] users = world.getTrackedUsers();  
@@ -267,18 +265,13 @@ public class Character extends Actor
         }
        
        
-       
        if ( flag ){
           
-           
-            System.out.println ( " character lost " );
+             System.out.println ( " character lost " );
              setState( new CharacterStateConfigure( this ) );
             
        }
             
-           // drawMan();
     }
-
-
 
 }

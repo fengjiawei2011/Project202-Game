@@ -50,6 +50,8 @@ public class CharacterStateNormal implements ICharacterState {
            int a = torso.getX();
            
            int b = torso.getY();
+           
+           // turn character body and head 
                
            if ( a > right ){
                

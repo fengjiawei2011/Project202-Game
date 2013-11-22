@@ -43,7 +43,7 @@ public class CharacterStateConfigure implements ICharacterState {
         ch = chr;
         
         chr.setImage("stand_edit.png");
-        chr.getImage().scale( 100, 170);
+        chr.getImage().scale( 100, 170 );
         chr.setLocation( chr.getX() , charY ); 
         
     }

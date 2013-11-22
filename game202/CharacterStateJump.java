@@ -37,7 +37,7 @@ public class CharacterStateJump implements ICharacterState {
                            
        jumpCounter = 0;
        chr.setImage("jump_edit.png");
-       chr.getImage().scale( 100, 170);
+       chr.getImage().scale( 70 , 100 );
        jumpCounter = jumpCounterValue;
        up = true;
     
