@@ -43,8 +43,10 @@ public class CharacterStateConfigure implements ICharacterState {
         ch = chr;
         
         chr.setImage("stand_edit.png");
-        chr.getImage().scale( 100, 170 );
+        chr.getImage().scale( 70,100 );
         chr.setLocation( chr.getX() , charY ); 
+        
+        ch.getGameLogic().setGamePaused(false);
         
     }
     
@@ -180,7 +182,7 @@ public class CharacterStateConfigure implements ICharacterState {
                             ch.jump  = jump;
                             ch.squat = squat;
                            
-                           
+                           ch.getGameLogic().setActorCalibrated(true);
                            ch.setState( new CharacterStateNormal( ch ) ) ;
                         }
                         

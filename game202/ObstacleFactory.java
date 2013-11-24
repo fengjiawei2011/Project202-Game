@@ -45,11 +45,7 @@ public class ObstacleFactory extends Actor
             case TREE:
             obstacle = new Tree();
             break;
-
-            case OVERHEAD:
-            obstacle = new OverHead();
-            break;
-            
+     
             default:
             break;
         }

@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=backGround
+comment0.target=StartGameState(BackGround)
+comment1.params=backGround
+comment1.target=void\ playGame(BackGround)
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ StartGameState\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=boolean\ isGamePaused()
+comment3.params=gamePaused
+comment3.target=void\ setGamePaused(boolean)
+comment4.params=
+comment4.target=boolean\ isActorCalibrated()
+comment5.params=actorCalibrated
+comment5.target=void\ setActorCalibrated(boolean)
+comment6.params=gameStoped
+comment6.target=void\ setGameStoped(boolean)
+numComments=7

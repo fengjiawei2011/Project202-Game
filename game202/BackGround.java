@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class BackGround here.
@@ -6,32 +6,27 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BackGround extends Actor implements Subject
+public class BackGround extends Actor
 {
-
-    int counter = 0;
     private boolean gamePaused = false;
+    private boolean gameStoped = false;
+        
+    private boolean actorCalibrated = false;
+    private IGameState currentGameState = null;
+    public static BackGround backGround = null;
+
+    public static BackGround getInstance()
+    {
+        if(backGround == null)
+        {
+            backGround = new BackGround();
+        }
+        return backGround;
+    }
 
     public BackGround(){
-        Greenfoot.setWorld(new GamePreCheck());
+       
     }
-<<<<<<< HEAD
-    
-    int counter = 0;
-    
-    public void attach(Observer ob){
-    
-    }
-    public void detach(Observer ob){
-    
-    }
-    public void notifyObserver(){
-    
-    }
-    public void act() 
-    {
-        
-=======
 
     /**
      * Act - do whatever the BackGround wants to do. This method is called whenever
@@ -39,35 +34,34 @@ public class BackGround extends Actor implements Subject
      */
     public void act() 
     {
->>>>>>> 4cfb1423351c564f48a364be3245410be4e603c4
-        GreenfootImage g = new GreenfootImage("roadSides2-new.png");
-        this.setImage(g);
-        if(!isGamePaused())
-        {
-            counter++;
-            if(counter==200){
-                counter = 0;
-                this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.TREE), 300, 160);
-                this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.TREE), 410, 160);
+        if ( currentGameState == null ){
+            
+            currentGameState = new StartGameState(this);
+            setGameState(currentGameState);
 
-                if(((int)(Math.random()*10) % 3) == 0){
-                    this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.ROCK), 352, 160);
-                    this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.COIN), 361, 160);
-                    this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.ROCK), 368, 160);  
-                }else if(((int)(Math.random()*10) % 4) == 0){
-                    this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.ROCK), 352, 160);  
-                    //  this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.COIN), 355, 160);
-                    this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.ROADBLOCK), 362, 160);
-                    this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.ROCK), 367, 160);
-                }else{
-                    this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.COIN), 352, 160);
-                    //     this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.ROCK), 358, 160);
-                    this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.OVERHEAD), 360, 160);
-                    this.getWorld().addObject(ObstacleFactory.getInstance().buildObstacle(ObstacleType.COIN), 368, 160);
-                }
+            if(((isGamePaused()) && ((currentGameState.getClass().getName()).contains("StartGameState"))))
+            { 
+                currentGameState.setGamePaused(true);
             }
+
+            currentGameState.playGame(this);
+
         }
-    }  
+        else { 
+            currentGameState.playGame(this);
+        }
+    } 
+
+    public IGameState getGameState()
+    {
+        return currentGameState;
+    }
+
+    
+    public void setGameState(IGameState currentGameState)
+    {
+        this.currentGameState = currentGameState;
+    }
 
     public boolean isGamePaused()
     {
@@ -76,6 +70,26 @@ public class BackGround extends Actor implements Subject
 
     public void setGamePaused(boolean gamePaused)
     {
+        
         this.gamePaused = gamePaused;
+        this.currentGameState.setGamePaused(gamePaused);
+    }
+    public boolean isGameStoped()
+    {
+        return gameStoped;
+    }
+
+    public void setGameStoped(boolean gameStoped)
+    {
+        
+        this.gameStoped = gameStoped;
+        this.currentGameState.setGameStoped(gameStoped);
+    }
+
+    public void setActorCalibrated(boolean actorCalibrated)
+    {
+        this.actorCalibrated = actorCalibrated;
+        this.currentGameState.setActorCalibrated( actorCalibrated );
+
     }
 }

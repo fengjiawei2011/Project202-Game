@@ -25,7 +25,7 @@ public class Coin extends Obstacles
     {
         distance++;
         checkLane();
-        
+        notifyGameLogic();
         if(this.getX()>360){
             moveRight();
         }else{

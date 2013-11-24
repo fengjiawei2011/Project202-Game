@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=backGround
+comment0.target=void\ playGame(BackGround)
+comment1.params=gamepaused
+comment1.target=void\ setGamePaused(boolean)
+comment2.params=gameStoped
+comment2.target=void\ setGameStoped(boolean)
+comment3.params=actorCalibrated
+comment3.target=void\ setActorCalibrated(boolean)
+numComments=4

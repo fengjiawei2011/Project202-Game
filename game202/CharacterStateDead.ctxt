@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=chr
+comment0.target=CharacterStateDead(Character)
+comment1.params=chr
+comment1.target=void\ gameRun(Character)
+numComments=2

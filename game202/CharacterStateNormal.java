@@ -32,7 +32,7 @@ public class CharacterStateNormal implements ICharacterState {
         squat = chr.squat;
                                 
         chr.setImage("stand_edit.png");
-        chr.getImage().scale( 100, 170);
+        chr.getImage().scale( 70,100 );
         chr.setLocation( chr.getX() , charY ); 
         
     }
@@ -52,7 +52,11 @@ public class CharacterStateNormal implements ICharacterState {
            int b = torso.getY();
            
            // turn character body and head 
-               
+           
+           chr.setLocation( a , chr.getY() );
+            
+          
+           /*
            if ( a > right ){
                
                chr.setLocation( charLane2X , chr.getY() );
@@ -61,7 +65,7 @@ public class CharacterStateNormal implements ICharacterState {
                
                chr.setLocation( charLane1X , chr.getY() );    
                
-           }           
+           }  */         
                        
            if ( b < jump ){                       
            

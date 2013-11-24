@@ -1,3 +1,3 @@
 public enum ObstacleType {
-    ROCK, ROADBLOCK, COIN, TREE, OVERHEAD
+    ROCK, ROADBLOCK, COIN, TREE
 }

@@ -23,7 +23,7 @@ public class RoadBlock extends Obstacles
     public void act() 
     {
         checkLane();
-        
+        notifyGameLogic();
         if(this.getX()>360){
             moveRight();
         }

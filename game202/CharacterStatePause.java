@@ -11,11 +11,6 @@ public class CharacterStatePause implements ICharacterState {
     static int charLane1X = 200;
     static int charLane2X = 400;
     
-    static int jumpCounterValue = 150;
-    
-    
-    
-    boolean up;    
 
     int left = charX;
     int right = charX;
@@ -25,7 +20,6 @@ public class CharacterStatePause implements ICharacterState {
     int mid =0;
     
     
-    int jumpCounter = 0;
     
     public CharacterStatePause( Character chr ){
         
@@ -35,11 +29,12 @@ public class CharacterStatePause implements ICharacterState {
        jump  = chr.jump;
        squat = chr.squat;
                            
-       jumpCounter = 0;
-       chr.setImage("jump_edit.png");
+     
+       chr.setImage("stand_edit.png");
        chr.getImage().scale( 70 , 100 );
-       jumpCounter = jumpCounterValue;
-       up = true;
+       
+       chr.getGameLogic().setGamePaused(true);
+       
     
     }
     
@@ -52,12 +47,13 @@ public class CharacterStatePause implements ICharacterState {
        
        for (UserData user : users) {
                   
-           if (user.getJoint( Joint.LEFT_HAND).getY( ) < user.getJoint(Joint.HEAD).getY ( ) ) {
+           if (user.getJoint( Joint.LEFT_HAND).getY( ) > user.getJoint(Joint.HEAD).getY ( ) ) {
                         
-               if (user.getJoint( Joint.RIGHT_HAND).getY( ) < user.getJoint(Joint.HEAD).getY ( ) ) {
+               if (user.getJoint( Joint.RIGHT_HAND).getY( ) > user.getJoint(Joint.HEAD).getY ( ) ) {
                            
                    if (user.getJoint( Joint.RIGHT_HAND).getX( ) < user.getJoint( Joint.LEFT_HAND).getX( ) ) {
                            chr.setState( new CharacterStateNormal( chr ) ) ;
+                                  chr.getGameLogic().setGamePaused(false);
                     }
                 }
             }                           

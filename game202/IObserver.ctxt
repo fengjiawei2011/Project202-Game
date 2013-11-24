@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=subject\ type
+comment0.target=void\ update(ISubject,\ java.lang.String)
+numComments=1

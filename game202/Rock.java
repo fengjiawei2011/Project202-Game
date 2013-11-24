@@ -15,7 +15,6 @@ public class Rock extends Obstacles
     private int distance = 0;    
     private int lane;
     //int copyX = 283 , copyY = 36; //283 36
-    
     public Rock(){
         super(ObstacleType.ROCK);
         this.setRotation(90);
@@ -25,7 +24,7 @@ public class Rock extends Obstacles
     {
         distance++;
         checkLane();
-        
+       notifyGameLogic();
         if(this.getX()>360){
             moveRight();
         }else{
@@ -47,6 +46,7 @@ public class Rock extends Obstacles
         
         }       
     }
+   
     
     public void checkLane(){
         if(this.getX()>=350 && this.getX()<=355){
